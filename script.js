@@ -13,4 +13,7 @@ function voltear(card) {
         document.getElementById("contador").textContent = letrasDescubiertas;
     }
 
+function voltear(tarjeta) {
+    tarjeta.classList.toggle("volteada");
+}
 }
