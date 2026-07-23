@@ -33,5 +33,5 @@ ABC Enseña es una aplicación web interactiva desarrollada como parte del labor
 - Jonathan David
 - Miguel Ospina
 - Paula Rodriguez
-- Paula Rodriguez
+- Sebas Rincon
 - Dilsia Lamadrid
