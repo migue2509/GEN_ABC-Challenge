@@ -2,6 +2,8 @@
 
 ABC Enseña es una aplicación web interactiva desarrollada como parte del laboratorio grupal **ABC Challenge** de Generation Colombia. Su propósito es facilitar el aprendizaje del abecedario mediante tarjetas interactivas con imágenes y palabras representativas.
 
+[Mi tablero de Trello] (https://trello.com/invite/b/6a469f6b9d2fcdee90523de3/ATTIb1c55ea644995f2030eee6644c775919DF4377A9/mi-tablero-de-trello)
+
 ## Funcionalidades
 
 - Visualización de las 26 letras del abecedario.
@@ -9,7 +11,7 @@ ABC Enseña es una aplicación web interactiva desarrollada como parte del labor
 - Contador de letras descubiertas.
 - Filtro para mostrar todas las letras o únicamente las vocales.
 - Sección con los integrantes del equipo.
-- Diseño responsivo y amigable para niños.
+- Diseño amigable para niños.
 
 ## Tecnologías
 
