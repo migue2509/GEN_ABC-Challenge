@@ -1,23 +1,23 @@
 :root {
 
-  --bg-blanco1: #FFFDF4;          
-  --bg-blancocard: #FFFFFF;         
-  --texto-azull: #1D446C;     
-  --texto2-grissecundario: #5A6B7C;   
+    --bg-blanco1: #FFFDF4;
+    --bg-blancocard: #FFFFFF;
+    --texto-azull: #1D446C;
+    --texto2-grissecundario: #5A6B7C;
 
 
-  --color-Azulp: #235489;       
-  --color-Naranjap: #F7943B;     
-  --color-amarillop: #FBC638;     
-  --color-rosadobb: #F47C9C;      
-  --color-azulbb: #75C6C4;       
-  --color-moradobb: #9F9EE3;     
-  
-  
-  
+    --color-Azulp: #235489;
+    --color-Naranjap: #F7943B;
+    --color-amarillop: #FBC638;
+    --color-rosadobb: #F47C9C;
+    --color-azulbb: #75C6C4;
+    --color-moradobb: #9F9EE3;
 
-  --sombra-fondo: 0 8px 24px rgba(29, 68, 108, 0.05);
-}.card {
+
+    --sombra-fondo: 0 8px 24px rgba(29, 68, 108, 0.05);
+}
+
+.card {
     width: 200px;
     height: 250px;
     position: relative;
