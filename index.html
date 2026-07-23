@@ -4,13 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ABC ENSEÑA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
+        <nav class="navbar">
 
+            <div class="nombre">
+                <h1>ABC ENSEÑA</h1>
+            </div>
+
+            <div class="menu">
+
+                <div class="filtros">
+                    <button onclick="filtrar('todas')">
+                        Mostrar todas
+                    </button>
+
+                    <button onclick="filtrar('vocales')">
+                        Mostrar vocales
+                    </button>
+                </div>
+
+                <div class="contador">
+                    Tarjetas vistas:
+                    <span id="contador">0</span>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
