@@ -3,17 +3,21 @@
 let letrasDescubiertas = 0;
 
 // Función para girar las tarjetas
-function voltear(card) {
+ function voltear(card) {
 
-    if (!card.classList.contains("volteada")) {
+    card.classList.toggle("volteada");
 
-        card.classList.add("volteada");
+    if (card.classList.contains("volteada")) {
 
         letrasDescubiertas++;
 
-        document.getElementById("contador").textContent = letrasDescubiertas;
+    } else {
+
+        letrasDescubiertas--;
 
     }
+
+    document.getElementById("contador").textContent = letrasDescubiertas;
 
 }
 
