@@ -1,3 +1,4 @@
+
 :root {
     --bg-main: #fdefb2;
     --bg-card: #FFFFFF;
@@ -25,11 +26,80 @@ body {
     font-family: var(--font-display);
 }
 
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #AEE8C5;
+    padding: 16px 20px;
+}
+
+.nombre h1 {
+    font-size: 2.2rem; 
+    color: #4A90E2;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow:
+        2px 2px 0 #FFFFFF,
+        3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 12px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filtros button {
+    border: none;
+    background: #F88CB5;
+    color: #2D2D2D;
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.filtros button:hover {
+    transform: translateY(-3px);
+}
+
+.contador {
+    background: #F88CB5;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#contador {
+    background: #BFA8F5;
+    padding: 5px 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+/* Layout de Tarjetas */
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-    padding: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+    gap: 15px;
+    padding: 20px 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -39,6 +109,12 @@ main {
     position: relative;
     cursor: pointer;
     perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.volteada {
+    transform: rotateY(180deg);
 }
 
 .card-frente,
@@ -48,20 +124,18 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-
     box-sizing: border-box;
     border: 4px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 16px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .card-frente {
@@ -77,18 +151,8 @@ main {
     z-index: 1;
 }
 
-.card.volteada {
-    transform: rotateY(180deg);
-}
-
-.card-dorso {
-    transform: rotateY(180deg);
-}
-
-
-
 .card-frente h1 {
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin: 0;
     line-height: 1;
 }
@@ -101,195 +165,137 @@ main {
 }
 
 .card-dorso h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
     margin: 0;
 }
 
-.card {
-    width: 200px;
-    height: 250px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    cursor: pointer;
-}
+/* Colores dinámicos de las tarjetas */
+.card:nth-child(6n+1) .card-frente { background-color: var(--color-Azulp); }
+.card:nth-child(6n+2) .card-frente { background-color: var(--color-Naranjap); }
+.card:nth-child(6n+3) .card-frente { background-color: var(--color-amarillop); }
+.card:nth-child(6n+4) .card-frente { background-color: var(--color-rosadobb); }
+.card:nth-child(6n+5) .card-frente { background-color: var(--color-azulbb); }
+.card:nth-child(6n+6) .card-frente { background-color: var(--color-moradobb); }
 
-.card.volteada {
-    transform: rotateY(180deg);
-}
-
-.card-dorso {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-frente {
-    background-color: lightblue;
-}
-
-.card-dorso {
-    background-color: lightgreen;
-    transform: rotateY(180deg);
-}
-
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    /* Antes: 20px */
-    background-color: #AEE8C5;
-    padding: 12px 20px;
-    /* Agregado */
-}
-
-.nombre h1 {
-    color: #2D2D2D;
-    font-size: 2rem;
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-}
-
-.menu {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Nunito', sans-serif;
-}
-
-.filtros {
-    display: flex;
-    gap: 15px;
-}
-
-.filtros button {
-    border: none;
-    background: #F88CB5;
-    color: #2D2D2D;
-    padding: 8px 16px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.filtros button:hover {
-    background: #F88CB5;
-    transform: translateY(-3px);
-}
-
-.contador {
-    background: #F88CB5;
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-#contador {
-    background: #BFA8F5;
-    padding: 5px 12px;
-    border-radius: 50%;
-    margin-left: 10px;
-}
-
-.card:nth-child(6n+1) .card-frente {
-    background-color: var(--color-Azulp);
-}
-
-.card:nth-child(6n+2) .card-frente {
-    background-color: var(--color-Naranjap);
-}
-
-.card:nth-child(6n+3) .card-frente {
-    background-color: var(--color-amarillop);
-}
-
-.card:nth-child(6n+4) .card-frente {
-    background-color: var(--color-rosadobb);
-}
-
-.card:nth-child(6n+5) .card-frente {
-    background-color: var(--color-azulbb);
-}
-
-.card:nth-child(6n+6) .card-frente {
-    background-color: var(--color-moradobb);
-}
-
+/* Footer */
 footer {
     background: linear-gradient(135deg, #1D446C 0%, #235489 100%);
     color: #FFFDF4;
-    margin-top: 80px;
-    padding: 40px 20px;
+    margin-top: 60px;
+    padding: 30px 15px;
     text-align: center;
     border-top: 5px solid #FBC638;
 }
 
-.footer-container{
-    max-width:1200px;
-    margin:auto;
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
 }
 
-footer h3{
-    color:#FBC638;
-    font-size:1.6rem;
-    margin-bottom:15px;
+footer h3 {
+    color: #FBC638;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
-footer p{
-    color:#ffffff;
-    margin:8px 0;
-    font-size:.95rem;
-    line-height:1.6;
+footer p {
+    color: #ffffff;
+    margin: 8px 0;
+    font-size: .9rem;
+    line-height: 1.5;
 }
 
-.footer-team{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    margin:25px 0;
+.footer-team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-.member{
-    background:#ffffff;
-    color:#235489;
-    padding:10px 18px;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
+.member {
+    background: #ffffff;
+    color: #235489;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s;
+    font-size: 0.9rem;
 }
 
-.member:hover{
-    background:#FBC638;
-    color:#1D446C;
-    transform:translateY(-4px);
+.member:hover {
+    background: #FBC638;
+    color: #1D446C;
+    transform: translateY(-4px);
 }
 
-.footer-copy{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.25);
-    font-size:.85rem;
-    color:#e8e8e8;
+.footer-copy {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,.25);
+    font-size: .8rem;
+    color: #e8e8e8;
 }
 
-.nombre h1 {
-    font-size: 4rem;
-    color: #4A90E2;
-    text-align: center;
-    letter-spacing: 4px;
-    text-shadow:
-        2px 2px 0 #FFFFFF,
-        4px 4px 0 rgba(0, 0, 0, 0.15);
+
+/* 2. MEDIA QUERIES (DE MENOR A MAYOR TAMAÑO) */
+
+/* Tablets (≥ 768px) */
+@media screen and (min-width: 768px) {
+    .nombre h1 {
+        font-size: 3.2rem;
+        letter-spacing: 3px;
+    }
+
+    .menu {
+        flex-direction: row; /* Alinea los botones y el contador en horizontal */
+        justify-content: space-between;
+    }
+
+    .filtros button {
+        font-size: 16px;
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .card-frente h1 {
+        font-size: 4rem;
+    }
+
+    .card-dorso h3 {
+        font-size: 1.2rem;
+    }
 }
 
+/* Pantallas de Escritorio (≥ 1024px) */
+@media screen and (min-width: 1024px) {
+    .nombre h1 {
+        font-size: 4rem;
+        letter-spacing: 4px;
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .card-frente h1 {
+        font-size: 4.5rem;
+    }
+
+    .card-dorso h3 {
+        font-size: 1.3rem;
+    }
+
+    footer h3 {
+        font-size: 1.6rem;
+    }
+
+    footer p {
+        font-size: .95rem;
+    }
+}
